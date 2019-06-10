@@ -19,9 +19,26 @@ class AllUsersComponent extends React.Component<any, any>{
       errorMsg: '',
       total: '',
       per_page: '',
-      current_page: ''
+      current_page: '',
+      user:''
   }
     }
+
+    updateUser = (event)=>{
+      this.setState({
+          user: event.target.value
+      })
+  }
+
+    findUserSubmit = async (event) => {
+      event.preventDefault()
+
+      console.log(this.state.user);
+
+      this.props.history.push(`users/${this.state.user}`)
+      
+
+  }
 
     getUsersByPage = async pageNumber => {
       try{
@@ -112,6 +129,7 @@ render(){
               <div className="table-responsive">
               { this.state.users.length ? 
               <span>
+  
                 <table className="table table-bordered" id="dataTable" style={{width:'100%'}} cellSpacing="0">
                   <thead>
                     <tr>
@@ -169,6 +187,16 @@ render(){
               <li className="page-item" onClick={() => this.getUsersByPage(pageNumbers.length)}><span className="page-link">&raquo;</span></li></> : <></>}
             </ul>
             </nav>
+            <hr/>
+            <form className="user" style={{padding: '0 500px'}} onSubmit={this.findUserSubmit}>
+ <div className="form-group">
+ <label htmlFor="inputUser">Search by User</label>
+ <input type="text" className="form-control" id="inputUser" aria-describedby="userHelp" value={this.state.user} onChange={this.updateUser} />
+ </div>
+
+ <p>{this.props.errorMessage}</p>
+ <button className="btn btn-primary btn-user btn-block" type="submit">Find User</button>
+ </form> 
         </span>
                 : <p>No Users</p> }
                

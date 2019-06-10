@@ -7,16 +7,6 @@ import { User } from '../../models/user';
 import { Link } from 'react-router-dom';
 import { ReimbursementStatus } from '../../models/reimbursement-status';
 
-// interface IAllUsersState {
-//   users: []
-//   errorMsg: string
-// }
-
-interface IReimbUserProps{
-  currentUser: User
-  errorMessage: string
-}
-
 class AllReimbComponent extends React.Component<any, any>{
   constructor(props){
     super(props);
@@ -34,8 +24,8 @@ class AllReimbComponent extends React.Component<any, any>{
         this.setState({
             criteria: event.target.value
         })  
-        console.log(this.state.criteria);
-        console.log(event.target.value);
+        // console.log(this.state.criteria);
+        // console.log(event.target.value);
 
         if(event.target.value)
             this.getReimbursementsByPage(1, event.target.value)

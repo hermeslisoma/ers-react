@@ -84,6 +84,14 @@ render(){
                   
                                 </div>
                                 <hr/>
+
+            {this.props.currentUser && ['finance-manager','admin'].includes(this.props.currentUser.role.role) ? 
+                <div className="form-group">
+                <label htmlFor="inputUserId">User Id</label>
+                <input type="text" readOnly className="form-control form-control-user" id="inputUserId" aria-describedby="useridHelp" value={this.state.user.userId} />
+                </div> :
+                <span></span>}
+
                                     <div className="form-group">
                                     <label htmlFor="inputUsername">Username</label>
                                     <input type="text" readOnly className="form-control form-control-user" id="inputUsername" aria-describedby="usernameHelp" value={this.state.user.username} />
@@ -105,7 +113,7 @@ render(){
                                     <input type="text" readOnly className="form-control form-control-user" id="inputRole" aria-describedby="roleHelp" value={this.state.user.role.role} />
                                     </div>
                                     <hr/>
-                                </div> :<p>User not found</p>}
+                                </div> :<h4 style={{paddingLeft:'150px'}}>User not found</h4>}
                             </div>
                             </div>
                         </div>

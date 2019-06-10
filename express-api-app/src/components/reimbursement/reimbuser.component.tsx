@@ -145,7 +145,7 @@ render(){
                       <td>{reimbursement.status.status}</td>
                       <td>{reimbursement.type.type}</td>
                       <td>
-                      {['finance-manager','admin'].includes(this.props.currentUser.role.role)?
+                      {this.props.currentUser && this.props.currentUser.role && ['finance-manager','admin'].includes(this.props.currentUser.role.role)?
                     <Link to={`/reimbursements/${reimbursement.reimbursementId}`} className="btn btn-primary btn-circle">
                       <i className="fas fa-edit" title="edit reimbursement"></i>
                   </Link>:<span></span>}

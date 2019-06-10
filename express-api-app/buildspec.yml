@@ -5,6 +5,7 @@ phases:
     runtime-versions:
       nodejs: 8
     commands:
+      - cd express-api-app
       - npm install
   build:
     commands:
@@ -12,4 +13,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'build'
+  base-directory: 'express-api-app/build'

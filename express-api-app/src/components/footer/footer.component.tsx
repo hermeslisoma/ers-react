@@ -12,7 +12,7 @@ render(){
                 {/*<!-- Footer -->*/}
             <div className="container my-auto">
             <div className="copyright text-center my-auto">
-                <span>Copyright &copy; 1905JavaReact @Hermes</span>
+                <span>1905JavaReact @Hermes</span>
             </div>
             </div>
             {/*<!-- End of Footer -->*/}

@@ -50,7 +50,7 @@ render(){
 }
 
 const mapStateToProps = (state:IState) =>{
-    console.log(state);
+    //console.log(state);
     
     return {
         currentUser: state.login.currentUser,

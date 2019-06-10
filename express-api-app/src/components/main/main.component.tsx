@@ -21,7 +21,7 @@ export class MainComponent extends React.Component<any, any>{
     <SidebarComponent />
     <div id="content-wrapper" className="d-flex flex-column">
     <div id="content">  
-    <TopbarComponent />
+    <TopbarComponent/>
     {this.props.children}
       </div>
     <FooterComponent/>
