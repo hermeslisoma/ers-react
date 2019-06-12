@@ -9,17 +9,12 @@ export const logout = () => (dispatch, getState) =>{
     const nowState = getState()
     console.log(nowState);
     
-
     try{
             dispatch({
-                payload:{
-                    currentUser: undefined
-                },
                 type: logoutTypes.SUCCESSFUL_LOGOUT
             })
             //history.push('/')
-
-       
+    
     } catch(err){
         console.log(err);        
     }

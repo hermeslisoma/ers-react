@@ -30,7 +30,7 @@ export const register = (username:string, password:string, firstName: string, la
                 payload:{
                     user: newUser
                 },
-                type:loginTypes.SUCCESSFUL_LOGIN
+                type:registerTypes.SUCCESSFUL_REGISTER
             })
             
             history.push('/')
@@ -38,7 +38,7 @@ export const register = (username:string, password:string, firstName: string, la
         } else {
             dispatch({
                 //with a type of INVALID CREDENTIALS
-                type: loginTypes.FAILED_TO_REGISTER
+                type: registerTypes.FAILED_TO_REGISTER
             })
         }        
     } catch(err){

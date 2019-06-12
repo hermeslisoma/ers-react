@@ -68,7 +68,7 @@ render(){
                         </Link>
 
                         <div className="dropdown-divider"></div>
-                        <button className="dropdown-item" onClick={this.login}>
+                        <button className="dropdown-item" onClick={this.logout}>
                         <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Logout
                         </button>
@@ -93,7 +93,7 @@ const mapStateToProps = (state:IState) =>{
   
   //this is the actions that will be availible to the component
   const mapDispatchToProps = {
-    login : login,
+    //login : login,
     logout: logout
   }
   

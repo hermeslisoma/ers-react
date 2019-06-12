@@ -1,5 +1,7 @@
 import { ILoginState } from ".";
 import { loginTypes } from "../actions/login.action";
+import { logoutTypes } from "../actions/logout.action";
+import { registerTypes } from "../actions/register.action";
 
 
 const initialState: ILoginState = {
@@ -26,11 +28,22 @@ export const loginReducer = (state = initialState, action) => {
                 currentUser: action.payload.user,
                 errorMessage:undefined
             }
-        case loginTypes.SUCCESS_LOGOUT:
+        case logoutTypes.SUCCESSFUL_LOGOUT:
             return {
                 ...state,
                 currentUser: undefined,
                 errorMessage:undefined
+            }
+        case registerTypes.SUCCESSFUL_REGISTER:
+            return {
+                ...state,
+                currentUser: action.payload.user,
+                errorMessage:undefined
+            }
+        case registerTypes.FAILED_TO_REGISTER:
+            return {
+                ...state,
+                errorMessage: 'Failed to Register, oopsie'
             }
         default:
     }

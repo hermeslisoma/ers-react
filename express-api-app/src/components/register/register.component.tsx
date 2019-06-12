@@ -138,7 +138,7 @@ export class RegisterComponent extends React.Component<IRegisterProps, any>{
 const mapStateToProps = (state:IState) =>{
     return {
         currentUser: state.login.currentUser,
-        //errorMessage: state.register.errorMessage
+        errorMessage: state.login.errorMessage
     }
 }
 //this is the actions that will be availible to the component

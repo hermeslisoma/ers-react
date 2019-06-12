@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
 import { User } from "../models/user";
 import { loginReducer } from "./login.reducer";
-import { registerReducer } from "./register.reducer";
-import { logoutReducer } from "./logout.reducer";
 
 
 export interface ILoginState{
@@ -21,7 +19,7 @@ export interface IRegisterState{
 }
 
 export interface IState{
-    login:any
+    login:ILoginState
     //register:IRegisterState
     //logout:any
 }
